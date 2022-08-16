@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rate of interest on loans predictor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid bg-info text-white text-center" style="background-color:#aaa;">
+        <div class="container">
+            <h1 id="hea">Predictor for the rate of interest (ROI) on loans</h1>
+            <P class="lead py-2">
+                Enter your information to know your ROI
+            </P>
+        </div>
+    </div>
+    </nav>
+    <section>
+        <div>
+
+        </div>
+        </div>
+        <div class="container mb-3 py-6">
+            <h2 class="text-center">Please fill all the required parameters for the prediction</h2>
+            <form method="POST" action="/predict">
+                <div class="form-group">
+                    <label for="lenderyield">Enter your lender yield</label>
+                    <input type="lenderyield" class="form-control" style="width:470px;" id="lenderyield" name="lenderyield" placeholder="Example: 6.5"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="borrowerapr">Enter your borrower's Annual Percentage Rate (APR)</label>
+                    <input type="borrowerapr" class="form-control" style="width:470px;" id="borrowerapr" name="borrowerapr" placeholder="Example: 25"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="estimatedreturn">Enter your estimated return</label>
+                    <input type="estimatedreturn" class="form-control" style="width:470px;" id="estimatedreturn" name="estimatedreturn" placeholder="Example: 10"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="loancurrentdaysdelinquent">Enter your days of deliquency</label>
+                    <input type="loancurrentdaysdelinquent" class="form-control" style="width:470px;" id="loancurrentdaysdelinquent" name="loancurrentdaysdelinquent" placeholder="Example: 15"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="investors">Enter the number of your investors</label>
+                    <input type="investors" class="form-control" style="width:470px;" id="investors" name="investors" placeholder="Example: 2"
+                        required>
+                </div>
+                <center><button class="btn btn-primary" type="submit">Predict</button></center>
+            </form>
+        </div>
+        <div class="container text-center" id="prev">
+            <h2 class="display-6 text-center">Your rate of interest is : {{pred_name}}</h2>
+            <br>
+
+
+        </div>
+    </section>
+    <h3 class='text-center'>Technocolabs Softwares</h3>
+    <div class="container">
+
+
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+
+
+</body>
+
+</html>
